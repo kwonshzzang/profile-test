@@ -1,0 +1,19 @@
+server:
+  port: 8080
+
+spring:
+  config:
+    import:
+      - optional:classpath:/application-db.yml
+
+  banner:
+    location: banner-local.txt
+
+  datasource:
+    url: ${local-db.url}
+    username: ${local-db.username}
+    password: ${local-db.password}
+
+  jpa:
+    hibernate:
+      ddl-auto: update
